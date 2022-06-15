@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="app.js"></script>
   </head>
   <body>
     <section id="landing">
@@ -24,7 +24,9 @@
           <ul class="nav__links">
             <li><a href="#" class="nav__link">Home</a></li>
             <li><a href="#" class="nav__link no-click">Contact</a></li>
-            <li><a href="#featured" class="nav__link nav__link--primary">Books</a></li>
+            <li>
+              <a href="#featured" class="nav__link nav__link--primary">Books</a>
+            </li>
           </ul>
           <button class="btn__menu" onclick="openMenu()">
             <i class="fas fa-bars"></i>
@@ -56,7 +58,7 @@
             <h2>
               Find your dream book with <span class="purple">Library</span>
             </h2>
-            <a href="#featured">
+            <a href="./books.html">
               <button class="btn">Browse Books</button>
             </a>
           </div>
@@ -107,7 +109,8 @@
               </div>
             </div>
           </div>
-        </div>1
+        </div>
+        1
       </section>
 
       <section id="featured">
@@ -323,7 +326,7 @@
         <div class="container">
           <div class="row row__column">
             <h2>Explore more <span class="purple">books</span></h2>
-            <a href="#">
+            <a href="./books.html">
               <button class="btn">Browse Books</button>
             </a>
           </div>
