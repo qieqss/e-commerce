@@ -3,14 +3,24 @@ const booksWrapper = document.querySelector('.books');
 const selectFilter = document.getElementById('filter');
 
 async function renderBooks(filter) {
+  booksWrapper.classList.add('books__loading');
+
   if (!books) {
     books = await getBooks();
   }
 
+  booksWrapper.classList.remove("books__loading");
+
   if (filter === 'LOW_TO_HIGH')
-    books.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice));
+    books.sort(
+      (a, b) =>
+        (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice)
+    );
   if (filter === 'HIGH_TO_LOW')
-    books.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
+    books.sort(
+      (a, b) =>
+        (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice)
+    );
   if (filter === 'RATING') books.sort((a, b) => b.rating - a.rating);
 
   const booksHtml = books
@@ -38,7 +48,9 @@ ${prices(book.originalPrice, book.salePrice)}
 
 function prices(originalPrice, salePrice) {
   if (!salePrice) return `$${originalPrice.toFixed(2)}`;
-  return `<span class="book__price--normal">$${originalPrice.toFixed(2)} </span> $${salePrice.toFixed(2)}`;
+  return `<span class="book__price--normal">$${originalPrice.toFixed(
+    2
+  )} </span> $${salePrice.toFixed(2)}`;
 }
 
 function ratings(rating) {
